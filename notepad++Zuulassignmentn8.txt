@@ -1,0 +1,573 @@
+Exercise8.1
+While exploring the application, answer the following questions:
+
+What does this application do?
+
+What commands does the game accept?
+
+What does each command do?
+
+How many rooms are in the scenario?
+
+Draw a map of the existing rooms.
+
+Exercise 8.1 ANSWERS
+It starts a game named Zuul, and it's a text based adventure game. 
+
+It  accepts quit, help & go. 
+
+Go brings you to an area, so like go west, or go east, etc. 
+
+5 rooms exist. 
+
+https://cdn.discordapp.com/attachments/698638754604384300/782772174045970472/unknown.png <--- map of existing rooms
+
+
+Exercise8.2
+After you know what the whole application does, try to find out what each individual class does. Write down for each class its purpose. You need to look at the source code to do this. Note that you might not (and need not) understand all of the source code. Often, reading through comments and ­looking at method headers is enough.
+
+Exercise 8.2 ANSWERS 
+Classes are: Game, Parser, Command, Room, CommandWords
+
+I do not see the point of writing down what they do when the documentation of the source code within, states what they are for and what they do. 
+
+
+Exercise8.3
+Design your own game scenario. Do this away from the ­computer. Do not think about implementation, classes, or even programming in general. Just think about inventing an interesting game. This could be done with a group of people.
+
+Exercise 8.3 ANSWERS
+You are lost in a "house" that seems.. alive. Discover the stories within the house, and find a way out, before you are consumed by what lies within.
+
+
+Exercise8.4
+Draw (on paper) a map for the game you invented in Exercise8.3. Open the zuul-bad project and save it under a different name (e.g., zuul). This is the project you will use for making improvements and ­modifications throughout this chapter. You can leave off the -bad suffix, because it will (­hopefully) soon not be that bad anymore. As a first step, change the createRooms method in the Game class to create the rooms and exits you invented for your game.
+
+Exercise 8.4 ANSWERS
+I changed the default rooms to stuff that will be in my game, and made sure to place exits correctly for each room. 
+
+
+Exercise8.5
+Implement and use a separate printLocationInfo method in your project, as discussed in this section. Test your changes.
+
+
+Exercise 8.5 ANSWERS
+I created a separate method named printLocationInfo. This allows printWelcome & goRoom methods to make calls to our printLocationInfo. This allows us to avoid having to write the code twice. 
+
+
+Exercise8.6
+Make the changes we have described to the Room and Game classes.
+
+Exercise 8.6 ANSWERS
+I rewrote the way the lines of code were written, and instead of having a huge block, I condenses it into a single line. 
+
+
+Exercise8.7
+Make a similar change to the printLocationInfo method of Game so that details of the exits are now prepared by the Room rather than the Game. Define a method in Room with the following header:
+
+Exercise 8.7 ANSWERS
+I made the changes asked of me to the printLocationInfo. I als defined a method in Room called: 
+
+	public String getExitString()
+	
+
+Exercise8.8
+Implement the changes described in this section in your own zuul project.
+
+Exercise 8.8 ANSWERS
+I imported the java utility Hashmap, and added a private HashMap. I added the Hashmap to the fields and public Room. I rewrote the create Rooms layout so that there are no longer any restrictions when adding new ones. 
+
+
+Exercise8.9
+Look up the keySet method in the documentation of HashMap. What does it do?
+
+Exercise 8.9 ANSWERS
+Returns a Set view of the keys contained in this map.
+
+
+Exercise8.10
+Explain, in detail and in writing, how the getExitString method shown in Code 8.7 works.
+
+Exercise 8.10 ANSWERS
+instead of like our setting our Exit like with setExit, it's getting the exit. 
+
+
+Exercise8.11
+Implement the changes described in this section in your own zuul project.
+
+Exercise 8.11 ANSWERS
+I simplified the getExitString and added a new method to Room so when we make future changes, it allows it to be only the Room class. 
+
+
+Exercise8.12
+Draw an object diagram with all objects in your game, the way they are just after starting the game.
+
+Exercise 8.12 ANSWERS
+https://cdn.discordapp.com/attachments/698289680432758844/782773657675366420/unknown.png
+
+
+Exercise8.13
+How does the object diagram change when you execute a go command?
+
+Exercise 8.13
+It moves the player into a new room , with new positioning around them.. 
+
+
+Exercise8.14
+Add the look command to your version of the zuul game.
+
+Exercise 8.14 ANSWERS 
+I added the look command. 
+
+
+Exercise8.15
+Add another command to your game. For a start, you could choose something simple, such as a command eat that, when executed, just prints out “You have eaten now and you are not hungry any more.” Later, we can improve this so that you really get hungry over time and you need to find food.
+
+Exercise 8.15 ANSWERS
+In the game class I have added:
+
+private void eat()
+    {
+        System.out.println("You find a beautiful cake on the table, without questioning where it came from, you quickly grab a slice, and shove it in to your mouth. You taste nothing, and look down," +
+        "the cake seems to have vanished. The cake... was a LIE!");
+    }
+	
+Afterwards I added into our processCommand method:
+
+else if(commandWord.equals("eat")) {
+            eat();
+        }
+
+And lastly, I added into our CommandWords class:
+	"eat"
+	
+	
+Exercise8.16
+Implement the improved version of printing out the command words, as described in this section.
+
+Exercise 8.16 ANSWERS
+I improved the printing of command words in the printHelp. Now in the future I will only have to add commands to the CommandWords class. 
+
+
+Exercise8.17
+If you now add another new command, do you still need to change the Game class? Why?
+
+Exercise 8.17 ANSWERS
+No. Because future commands in our CommandWords class, parser will implement them into the parser.showCommands(); in our printHelp of the game Class. 
+
+
+Exercise8.18
+Implement the suggested change. Make sure that your program still works as before.
+
+Exercise 8.18 ANSWERS
+I have implemented the change. It looks like this:
+
+	public String getCommandsString()
+    {
+        String returnString = "";
+        for(String command : commands.keySet()) {
+            returnString += command + " ";
+        }
+        return returnString;
+    }    
+
+
+Exercise8.19
+Find out what the model-view-controller pattern is. You can do a web search to get information, or you can use any other sources you find. How is it related to the topic discussed here? What does it suggest? How could it be applied to this project? (Only discuss its application to this project, as an actual implementation would be an advanced challenge exercise.)
+
+Exercise 8.19 ANSWERS
+A MVC consists of a data model, presentation information, and control information. The pattern requires that each of these be separated into different objects.
+
+
+Exercise8.20
+Extend either your adventure project or the zuul-better project so that a room can contain a single item. Items have a description and a weight. When creating rooms and setting their exits, items for this game should also be created. When a player enters a room, information about an item in this room should be displayed.
+
+Exercise 8.20 ANSWERS
+I added a way to add items to the room. It shows up when you enter the room, it has detail about it, and it has a weight. 
+
+public void addItem(Item item)
+These are the lines of code that I added.
+
+	/**
+     * Place an item into this room.
+     */
+    public void addItem(Item item)
+    {
+        items.add(item);
+    }
+	
+	/**
+     * @return the item with the given name. If no item with 
+     * this name exists return null.
+     * @param name The name of the item to return.
+     */
+    public Item getItem(String name)
+    {
+        for(Item item : items) {
+            if(item.getName().equals(name)) {
+                return item;
+            }
+        }
+        
+        // if we get to this point no item with this name exists.
+        return null;
+    }
+	
+	/**
+     * @return the name of this artifact.
+     */
+    public String getName()
+    {
+        return name;
+    }
+	
+	/**
+     * @return the description of this artifact.
+     */
+    public String getDescription()
+    {
+        return description;
+    }
+	
+	/**
+     * @return the weight of this artifact in grams.
+     */
+    public int getWeight()
+    {
+        return weight;
+    }
+	
+	public String getLongDescription()
+    {
+        return "This is " + description + " and it weighs " + (weight/1000.0) + " kg.";
+    }
+				
+	
+Exercise8.21
+How should the information be produced about an item ­present in a room? Which class should produce the string describing the item? Which class should print it? Why? Explain in writing. If answering this exercise makes you feel you should change your implementation, go ahead and make the changes.
+
+Exercise 8.21 ANSWERS
+Describing the String is item, and:
+
+	/**
+     * @return a list of all items found in the room as a String.
+     */
+    public String getItemString()
+    {
+        String returnString = "Items: ";
+        for(Item item : items) {
+            returnString += " " + item.getName();
+        }
+        return returnString;
+    }
+	
+	for print?
+	
+	
+Exercise8.22
+Modify the project so that a room can hold any number of items. Use a collection to do this. Make sure the room has an addItem method that places an item into the room. Make sure all items get shown when a player enters a room.
+
+Exercise 8.22 ANSWERS
+It is already coded to hold any number. And the additem method is:
+
+	/**
+     * Place an item into this room.
+     */
+    public void addItem(Item item)
+    {
+        items.add(item);
+    }
+	
+This shows the list of items when you enter the room. 
+
+
+Exercise8.23
+Implement a back command. This command does not have a second word. Entering the back command takes the player into the previous room he/she was in.
+
+Exercise 8.23 ANSWERS
+The back command is:
+
+	public class BackCommand extends Command
+{
+    private Player player;
+    
+    /**
+     * Constructor for objects of class BackCommand
+     */
+    public BackCommand(Player player)
+    {
+        this.player = player;
+    }
+
+    public void execute()
+    {
+        if (player.goBack()) {
+            Command command = new LookCommand(player);
+            command.execute();
+        }
+        else {
+            System.out.println("Go back to where?");
+        }        
+    }
+	
+	
+Exercise8.24
+Test your new command. Does it work as expected? Also, test cases where the command is used incorrectly. For example, what does your program do if a player types a second word after the back command? Does it behave sensibly?
+
+Exercise 8.24 ANSWERS
+Yes it does. Using back will continue to work until you are back where you came from. If you continue trying, it will ask where to? If you type back and a specific name, it still only goes back, not to the room asked of it. 
+
+
+Exercise8.25
+What does your program do if you type “back” twice? Is this behavior sensible?
+
+Exercise 8.25 ANSWERS
+It will go two rooms back overall. 
+
+
+Exercise8.26
+Challenge exercise Implement the back command so that using it repeatedly takes you back several rooms, all the way to the beginning of the game if used often enough. Use a Stack to do this. (You may need to find out about stacks. Look at the Java library documentation.)
+
+Exercise 8.26 ANSWERS
+It functions like this already. 
+
+
+Exercise8.27
+What sort of baseline functionality tests might we wish to establish in the current version of the game?
+
+Exercise 8.27 ANSWERS
+Go to rooms, see if exits work correctly, the description of our surroundings, the items show up in each room, that we can pick up the items, use the items, and that our back and help commands work. 
+
+
+Exercise8.28
+Refactor your project to introduce a separate Player class. A Player object should store at least the current room of the player, but you may also like to store the player’s name or other information.
+
+Exercise 8.28 ANSWERS
+
+	public class Player
+	
+	/**
+     * Constructor for objects of class Player
+     */
+    public Player(String name, Room room)
+    {
+        this.name = name;
+        currentRoom = room;
+        rooms = new Stack<Room>();
+        items = new HashMap<String, Item>();
+    }
+	
+	/**
+     * @return the name of this player.
+     */
+    public String getName()
+    {
+        return name;
+    }
+	
+	
+Exercise8.29
+Implement an extension that allows a player to pick up one single item. This includes implementing two new commands: take and drop.
+
+
+Exercise 8.29 ANSWERS
+The take and drop command are:
+
+	public class TakeCommand extends Command
+	
+	public class DropCommand extends Command
+
+
+Exercise8.30
+Extend your implementation to allow the player to carry any number of items.
+
+Exercise 8.30 ANSWERS
+It would look like:
+
+	public String getItemString()
+    {
+        String returnString = "Items in your bag: ";
+        Set<String> keys = items.keySet();
+        for(String name : keys) {
+            returnString += " " + name;
+        }
+                
+        int currentWeight = getCurrentWeight();
+        int freeWeight = maxWeight-currentWeight;
+        returnString += ".\nYour bag weights " + (currentWeight/1000.0) + "kg. " +
+                        "There is room for " + (freeWeight/1000.0) + " more kg.";
+        
+        return returnString;
+		
+The player can carry any number of items, as long as the weight does not surpass the limit. 
+
+
+Exercise8.31
+Add a restriction that allows the player to carry items only up to a specified maximum weight. The maximum weight a player can carry is an attribute of the player.
+
+Exercise 8.31 ANSWERS
+	
+	private int maxWeight = 5000;
+	
+
+Exercise8.32
+Implement an items command that prints out all items currently carried and their total weight.
+
+Exercise 8.32 ANSWERS
+
+	public class ItemsCommand extends Command
+{
+    private Player player;
+    
+    /**
+     * Constructor for objects of class ItemsCommand
+     */
+    public ItemsCommand(Player player)
+    {
+        this.player = player;
+    }
+
+    public void execute()
+    {
+        System.out.println(player.getItemString());
+        System.out.println();        
+    }
+	
+
+Exercise8.33
+Add a magic cookie item to a room. Add an eat cookie ­command. If a player finds and eats the magic cookie, it increases the weight that the player can carry. (You might like to modify this slightly to better fit into your own game scenario.)
+
+Exercise 8.33 ANSWERS
+Could not get this to work correctly. 
+
+
+Exercise8.34
+Review the source code of the zuul-with-enums-v1 project to see how it uses the CommandWord type. The classes Command, ­CommandWords, Game, and Parser have all been adapted from the zuul-better version to accommodate this change. Check that the program still works as you would expect.
+
+Exercise 8.34 ANSWERS
+Upon checking, the commands are better layed out, and are more concisely given to you in the terminal. Beyond that, I did not find much difference in testing. Perhaps I am not testing the right things? 
+
+
+Exercise8.35
+Add a look command to the game, along the lines described in Section8.9
+
+Exercise 8.35 ANSWERS
+	
+	public class LookCommand extends Command
+	
+	
+Exercise8.36
+“Translate” the game to use different command words for the GO and QUIT commands. These could be from a real language or just made-up words. Do you only have to edit the CommandWords class to make this change work? What is the significance of this?
+
+Exercise 8.36 ANSWERS
+No. Changing them breaks the game. In the game class, we still have our go and quit command.
+Changing this makes it where we have to force close the game because our quit no longer works.
+
+
+Exercise8.37
+Change the word associated with the HELP command and check that it works correctly. After you have made your changes, what do you notice about the welcome message that is printed when the game starts?
+
+Exercise 8.37 ANSWER
+Changing the word help makes it no longer work, and when you launch the game, it still says type help for the list, rather then the new word we created for it.  
+
+
+Exercise8.38
+In a new project, define your own enumerated type called Direction with values NORTH, SOUTH, EAST, and WEST.
+
+Exercise 8.38 ANSWERS
+
+	public enum Directions{
+				EAST, 
+				WEST, 
+				NORTH, 
+				SOUTH
+}
+public class EnumDemo
+{
+   public static void main(String args[]){
+	Directions dir = Directions.NORTH;  
+	if(dir == Directions.EAST) {
+	    System.out.println("Direction: East");
+	} else if(dir == Directions.WEST) {
+	    System.out.println("Direction: West");
+	  } else if(dir == Directions.NORTH) {
+	      System.out.println("Direction: North");
+  	    } else {
+		System.out.println("Direction: South");
+	      }
+   }
+}
+
+
+Exercise8.39
+Add your own look command to zuul-with-enums-v2. Do you only need to change the CommandWord type?
+
+Exercise 8.39 ANSWERS
+I added my own look command, and no, you have to implement changes in the game class as well. 
+
+
+Exercise8.40
+Change the word associated with the help command in ­CommandWord. Is this change automatically reflected in the welcome text when you start the game? Take a look at the printWelcome method in the Game class to see how this has been achieved.
+
+Exercise 8.40 ANSWERS
+Changing it changes the welcome text. It is to do with the parser.showCommands(); in the game class.
+
+
+Exercise8.41
+Add some form of time limit to your game. If a certain task is not completed in a specified time, the player loses. A time limit can easily be implemented by counting the number of moves or the number of entered ­commands. You do not need to use real time.
+
+Exercise 8.41 ANSWERS
+Could not get this to function correctly.
+
+
+Exercise 8.42
+Implement a trapdoor somewhere (or some other form of door that you can only cross one way).
+
+Exercise 8.42 ANSWERS
+Could not get this to function correctly.
+
+
+Exercise8.43
+Add a beamer to the game. A beamer is a device that can be charged and fired. When you charge the beamer, it memorizes the current room. When you fire the beamer, it transports you immediately back to the room it was charged in. The beamer could either be standard equipment or an item that the player can find. Of course, you need commands to charge and fire the beamer.
+
+Exercise 8.43 ANSWERS
+Implemented and compiled, but not working correctly. 
+
+Exercise8.44
+Add locked doors to your game. The player needs to find (or otherwise obtain) a key to open a door.
+
+Exercise 8.44 ANSWERS
+I added a locked basement door, and a brickwall  that you have to open by finding a sledgehammer to break it. 
+
+
+Exercise8.45
+Add a transporter room. Whenever the player enters this room, he/she is randomly transported into one of the other rooms. Note: Coming up with a good design for this task is not trivial. It might be interesting to discuss design alternatives for this with other students. (We discuss design alternatives for this task at the end of Chapter11 . The adventurous or advanced reader may want to skip ahead and have a look.)
+
+Exercise 8.45 ANSWERS
+I can not get it to teleport the player. Similar issue with beamer. 
+
+
+Exercise8.46
+Challenge exercise In the processCommand method in Game, there is a switch statement (or a sequence of if statements) to dispatch ­commands when a command word is recognized. This is not a very good design, because every time we add a command, we have to add a case here. Can you improve this design? Design the classes so that handling of commands is more modular and new commands can be added more easily. Implement it. Test it.
+
+Exercise 8.46 ANSWERS
+I think I did this correctly? Made separate commands in the diagram layout. 
+
+
+Exercise8.47
+Add characters to the game. Characters are similar to items, but they can talk. They speak some text when you first meet them, and they may give you some help if you give them the right item.
+
+Exercise 8.47 ANSWERS
+I added a character, but I can not get it's interaction/dialogue to work. 
+
+Exercise8.48
+Add moving characters. These are like other characters, but every time the player types a command, these characters can move into an adjoining room.
+
+Exercise 8.48 ANSWERS
+Could not get this to work at all. 
+
+
+Exercise8.49
+Add a class called GameMain to your project. Define just a main method within it and have them method create a Game object and call its play method
+
+Exercise 8.49 ANSWERS
+?????

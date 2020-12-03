@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=Decoration
+comment0.text=\r\n\ Decoration\ is\ an\ item\ that\ can\ be\ found\ in\ a\ room.\ A\ player\r\n\ can\ look\ at\ decoration\ but\ cannot\ pick\ it\ up\ regardless\ of\ its\r\n\ weight,\ which\ is\ ignored.\r\n\ \r\n\ @author\ Anthony\ Barker\r\n\ @version\ 11.23.2020\r\n
+comment1.params=name\ description
+comment1.target=Decoration(java.lang.String,\ java.lang.String)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Decoration\r\n
+comment2.params=
+comment2.target=boolean\ canBePickedUp()
+comment3.params=
+comment3.target=java.lang.String\ getLongDescription()
+comment3.text=\r\n\ @return\ the\ name\ of\ this\ item\ long\ with\ its\ description.\r\n
+numComments=4

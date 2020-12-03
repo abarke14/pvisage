@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=Character
+comment0.text=\r\n\ Represents\ a\ character\ who\ can\ be\ found\ in\ a\ room.\ A\ character\r\n\ speaks\ some\ text\ when\ the\ player\ first\ meets\ him,\ and\ may\ give\r\n\ the\ player\ some\ help\ if\ given\ the\ right\ item.\r\n\ \r\n\ @author\ Anthony\ Barker\r\n\ @version\ 11.25.2020\r\n
+comment1.params=name\ text
+comment1.target=Character(java.lang.String,\ java.lang.String)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Character\r\n
+comment2.params=token\ help
+comment2.target=void\ setToken(Item,\ java.lang.String)
+comment2.text=\r\n\ Help\ can\ be\ offered\ when\ the\ right\ item\ is\ given\ to\ this\ character.\r\n\ @param\ token\ The\ item\ this\ character\ needs.\r\n\ @param\ help\ The\ help\ to\ be\ offered.\r\n
+comment3.params=
+comment3.target=java.lang.String\ getName()
+comment3.text=\r\n\ @return\ the\ name\ of\ this\ character.\r\n
+comment4.params=
+comment4.target=java.lang.String\ getText()
+comment4.text=\r\n\ @return\ the\ text\ this\ character\ speaks.\r\n
+comment5.params=
+comment5.target=Item\ getToken()
+comment5.text=\r\n\ @return\ the\ item\ this\ character\ needs.\r\n
+comment6.params=
+comment6.target=java.lang.String\ getLongDescription()
+comment6.text=\r\n\ @return\ the\ name\ and\ the\ text\ of\ this\ character.\r\n
+comment7.params=item
+comment7.target=boolean\ help(Item)
+comment7.text=\r\n\ Offer\ some\ help\ to\ the\ player\ if\ the\ right\ item\ is\r\n\ given.\r\n\ @param\ item\ The\ item\ to\ give\ to\ the\ character.\r\n\ @return\ the\ help\ text\ offered\ by\ this\ character.\r\n
+numComments=8

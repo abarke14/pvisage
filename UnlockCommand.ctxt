@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=UnlockCommand
+comment0.text=\r\n\ Try\ to\ unlock\ a\ room.\ If\ the\ key\ to\ the\ room's\ door\ is\r\n\ not\ in\ the\ player's\ bag\ print\ an\ error\ message.\r\n\ \r\n\ @author\ Anthony\ Barker\r\n\ @version\ 11.26.2020\r\n
+comment1.params=player
+comment1.target=UnlockCommand(Player)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ UnlockCommand\r\n
+comment2.params=
+comment2.target=void\ execute()
+numComments=3

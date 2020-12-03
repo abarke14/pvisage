@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=LookCommand
+comment0.text=\r\n\ Have\ a\ look\ around\ the\ current\ room\ or\ at\ an\ item\ that\ is\ \r\n\ either\ in\ the\ room\ or\ in\ the\ player's\ bag.\r\n\ \r\n\ @author\ Anthony\ Barker\r\n\ @version\ 11.26.2020\r\n
+comment1.params=player
+comment1.target=LookCommand(Player)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ LookCommand\r\n
+comment2.params=
+comment2.target=void\ execute()
+comment3.params=name
+comment3.target=boolean\ lookItemInRoom(java.lang.String)
+comment3.text=\r\n\ Look\ at\ the\ room\ for\ an\ item\ with\ the\ given\ name\ and\r\n\ show\ its\ description.\r\n\ @return\ true\ if\ the\ item\ is\ found\ or\ false\ if\ it's\ not.\r\n
+comment4.params=name
+comment4.target=boolean\ lookItemInBag(java.lang.String)
+comment4.text=\r\n\ Look\ at\ the\ player's\ bag\ for\ an\ item\ with\ the\ given\r\n\ name\ and\ show\ its\ description.\r\n\ @return\ true\ if\ the\ item\ is\ found\ or\ false\ if\ it's\ not.\r\n
+comment5.params=name
+comment5.target=boolean\ lookCharacterInRoom(java.lang.String)
+comment5.text=\r\n\ Look\ at\ a\ character\ with\ the\ given\ name\ and\ show\r\n\ its\ description.\r\n\ @return\ true\ if\ the\ character\ is\ found\ or\ false\ if\ it's\ not.\r\n
+numComments=6

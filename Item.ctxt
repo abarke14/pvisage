@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Item
+comment0.text=\r\n\ Represents\ an\ item\ that\ can\ be\ found\ in\ a\ room.\ An\ item\r\n\ has\ a\ name,\ a\ description\ and\ weight\ in\ grams.\ The\ player\ \r\n\ can\ only\ pick\ up\ an\ item\ whose\ weight\ does\ not\ exceed\ his\r\n\ maximum\ weight\ capability.\r\n\ \r\n\ @author\ Anthony\ Barker\r\n\ @version\ 11.22.2020\r\n
+comment1.params=name\ description\ weight
+comment1.target=Item(java.lang.String,\ java.lang.String,\ int)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Item\r\n
+comment2.params=
+comment2.target=java.lang.String\ getName()
+comment2.text=\r\n\ @return\ the\ name\ of\ this\ artifact.\r\n
+comment3.params=
+comment3.target=java.lang.String\ getDescription()
+comment3.text=\r\n\ @return\ the\ description\ of\ this\ artifact.\r\n
+comment4.params=
+comment4.target=int\ getWeight()
+comment4.text=\r\n\ @return\ the\ weight\ of\ this\ artifact\ in\ grams.\r\n
+comment5.params=
+comment5.target=boolean\ canBePickedUp()
+comment6.params=
+comment6.target=java.lang.String\ getLongDescription()
+comment6.text=\r\n\ @return\ the\ name\ of\ this\ item\ along\ with\ its\ description\r\n\ and\ its\ weight\ in\ kg.\r\n
+numComments=7

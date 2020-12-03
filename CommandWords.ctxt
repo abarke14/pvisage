@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=CommandWords
+comment0.text=\r\n\ Holds\ a\ list\ of\ command\ words\ known\ to\ the\ game.\r\n\ \r\n\ @author\ Anthony\ Barker\r\n\ @version\ 11.28.2020\r\n
+comment1.params=
+comment1.target=CommandWords()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ CommandWords\r\n
+comment2.params=word\ command
+comment2.target=void\ addCommand(java.lang.String,\ Command)
+comment2.text=\r\n\ Associate\ a\ command\ word\ with\ a\ Command\ object.\r\n
+comment3.params=aString
+comment3.target=boolean\ isCommand(java.lang.String)
+comment3.text=\r\n\ Check\ whether\ a\ given\ string\ is\ a\ valid\ command\ word.\r\n\ @return\ true\ if\ it\ is,\ false\ if\ it\ isn't.\r\n
+comment4.params=commandWord
+comment4.target=Command\ getCommand(java.lang.String)
+comment4.text=\r\n\ Find\ the\ Command\ associated\ with\ a\ command\ word.\r\n\ @return\ The\ Command\ corresponding\ to\ the\ command\ word\r\n\ or\ UnknownCommand\ if\ it\ is\ not\ a\ valid\ command\ word.\r\n
+comment5.params=
+comment5.target=java.lang.String\ getCommandsString()
+comment5.text=\r\n\ @returns\ the\ list\ of\ known\ commands\ as\ a\ string.\r\n
+numComments=6

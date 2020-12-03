@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Command
+comment0.text=\r\n\ Represents\ a\ two-words\ game\ command.\ A\ command\ currently\ consists\r\n\ of\ two\ parts\:\ a\ CommandWord\ and\ a\ string.\ If\ the\ command\ has\ only\ \r\n\ one\ word\ then\ the\ second\ string\ is\ null.\r\n\ \r\n\ @author\ Anthony\ Barker\r\n\ @version\ 11.24.2020\r\n
+comment1.params=word
+comment1.target=void\ setSecondWord(java.lang.String)
+comment1.text=\r\n\ Set\ the\ second\ string\ of\ the\ command.\r\n
+comment2.params=
+comment2.target=java.lang.String\ getSecondWord()
+comment2.text=\r\n\ @return\ The\ second\ word\ of\ this\ command.\ Returns\ null\ if\ \r\n\ there\ is\ no\ second\ word.\r\n
+comment3.params=
+comment3.target=boolean\ hasSecondWord()
+comment3.text=\r\n\ @return\ true\ if\ the\ command\ has\ a\ second\ word.\r\n
+comment4.params=
+comment4.target=void\ execute()
+numComments=5

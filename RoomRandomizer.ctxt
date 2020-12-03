@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=RoomRandomizer
+comment0.text=\r\n\ Find\ a\ random\ Room\ from\ a\ given\ collection\ of\ rooms.\r\n\ \r\n\ @author\ Anthony\ Barker\r\n\ @version\ 11.23.2020\r\n
+comment1.params=
+comment1.target=RoomRandomizer()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ RoomRandomizer\r\n
+comment2.params=room
+comment2.target=void\ addRoom(Room)
+comment2.text=\r\n\ Add\ a\ Room\ to\ the\ collection\ of\ rooms.\r\n\ @param\ room\ The\ room\ to\ add.\r\n
+comment3.params=
+comment3.target=Room\ findRandomRoom()
+comment3.text=\r\n\ @return\ a\ random\ room\ from\ a\ given\ collection\ of\r\n\ rooms\ in\ the\ game\ or\ null\ if\ there\ are\ no\ rooms\ to\ \r\n\ choose\ from.\r\n
+numComments=4

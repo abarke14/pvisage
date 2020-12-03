@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=TakeCommand
+comment0.text=\r\n\ The\ player\ picks\ and\ item\ from\ the\ room\ and\ puts\ it\r\n\ in\ his\ bag.\ If\ the\ item\ is\ not\ in\ the\ room\ or\ it\ is\ \r\n\ too\ heavy\ for\ the\ player\ to\ carry\ print\ an\ error\ message.\r\n\ \r\n\ @author\ Anthony\ Barker\r\n\ @version\ 11.27.2020\r\n
+comment1.params=player
+comment1.target=TakeCommand(Player)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ TakeCommand\r\n
+comment2.params=
+comment2.target=void\ execute()
+numComments=3

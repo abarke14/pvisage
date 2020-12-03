@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=TransporterRoom
+comment0.text=\r\n\ A\ room\ that\ beams\ the\ player\ to\ a\ random\ location\ in\ the\ game\r\n\ if\ he\ tries\ to\ leave\ it.\r\n\ \r\n\ @author\ Anthony\ Barker\r\n\ @version\ 11.27.2020\r\n
+comment1.params=description\ randomizer
+comment1.target=TransporterRoom(java.lang.String,\ RoomRandomizer)
+comment2.params=direction
+comment2.target=Room\ getExit(java.lang.String)
+comment2.text=\r\n\ @return\ a\ random\ room\ independent\ of\ the\ direction\r\n\ parameter.\ If\ there\ are\ no\ rooms\ to\ choose\ from\ return\r\n\ the\ exit\ found\ at\ this\ direction.\r\n\ @param\ direction\ used\ when\ cannot\ find\ a\ random\ room\ to\ go\ to.\r\n
+numComments=3
